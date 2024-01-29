@@ -1,8 +1,9 @@
-// Create the connection to database
-const connection = await mysql.createConnection({
+const mysql = require('mysql2/promise')
+
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'bocil',
   });
-
-  export {connection};
+  console.log(connection)
+  module.exports = {connection}
